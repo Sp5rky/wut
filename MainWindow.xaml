@@ -41,6 +41,7 @@
 							<Label Content="Communications" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installslack" Content="Slack" Margin="5,0"/>
 							<CheckBox Name="Installteams" Content="Teams" Margin="5,0"/>
+							<CheckBox Name="Installwebex" Content="Webex" Margin="5,0"/>
 							<CheckBox Name="Installzoom" Content="Zoom" Margin="5,0"/>
 
 							<Label Content="Document" FontSize="16" Margin="5,0"/>
@@ -59,15 +60,15 @@
 							<Label Content="Utilities" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installsevenzip" Content="7-Zip" Margin="5,0"/>
 							<CheckBox Name="Installawsvpn" Content="AWS VPN Client" Margin="5,0"/>
-							<CheckBox Name="Installwebex" Content="Cisco Webex" Margin="5,0"/>
+
 							<CheckBox Name="Installrevo" Content="Revo Uninstaller" Margin="5,0"/>
 							<CheckBox Name="Installrufus" Content="Rufus Imager" Margin="5,0"/>
 
 							<Label Content="" FontSize="16" Margin="5,0"/>
 							<Button Name="install" Background="AliceBlue" Content="Start Install" Margin="20,5,20,5" ToolTip="Install all checked programs"/>
 							<Button Name="InstallUpgrade" Background="AliceBlue" Content="Upgrade Installs" Margin="20,5,20,20" ToolTip="Upgrade All Existing Programs on System"/>
-
 						</StackPanel>
+
 					</Grid>
 				</TabItem>
 				<TabItem Header="Tweaks" Visibility="Collapsed" Name="Tab2">
