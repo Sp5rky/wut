@@ -164,6 +164,14 @@ $WPFinstall.Add_Click({
             $wingetinstall.Add("Git.Git")
             $WPFInstallgithubdesktop.IsChecked = $false
         }
+        If ( $WPFInstallawsvpn.IsChecked -eq $true ) { 
+            $wingetinstall.Add("Amazon.AWSVPNClient")
+            $WPFInstallawsvpn.IsChecked = $false
+        }
+        If ( $WPFInstallwebex.IsChecked -eq $true ) { 
+            $wingetinstall.Add("Cisco.CiscoWebexMeetings")
+            $WPFInstallwebex.IsChecked = $false
+        }
         If ( $WPFInstallgithubdesktop.IsChecked -eq $true ) { 
             $wingetinstall.Add("GitHub.GitHubDesktop")
             $WPFInstallgithubdesktop.IsChecked = $false

@@ -18,6 +18,12 @@
     "Installatom": {
       "winget": "GitHub.Atom"
     },
+    "Installawsvpn": {
+      "winget": "Amazon.AWSVPNClient"
+    }, 
+   "Installwebex": {
+      "winget": "Cisco.CiscoWebexMeetings"
+    },
     "Installaudacity": {
       "winget": "Audacity.Audacity"
     },
