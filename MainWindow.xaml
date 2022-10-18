@@ -60,10 +60,10 @@
 							<Label Content="Utilities" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installsevenzip" Content="7-Zip" Margin="5,0"/>
 							<CheckBox Name="Installawsvpn" Content="AWS VPN Client" Margin="5,0"/>
+							<CheckBox Name="Installwebex" Content="Cisco Webex" Margin="5,0"/>
 							<CheckBox Name="Installflux" Content="f.lux Redshift" Margin="5,0"/>
 							<CheckBox Name="Installrevo" Content="RevoUninstaller" Margin="5,0"/>
 							<CheckBox Name="Installrufus" Content="Rufus Imager" Margin="5,0"/>
-							<CheckBox Name="Installwebex" Content="Cisco Webex" Margin="5,0"/>
 
 							<Label Content="" FontSize="16" Margin="5,0"/>
 							<Button Name="install" Background="AliceBlue" Content="Start Install" Margin="20,5,20,5" ToolTip="Install all checked programs"/>
