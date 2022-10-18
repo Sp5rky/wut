@@ -4,8 +4,8 @@
     Version 0.0.1
 #>
 
-$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-#$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
+#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
+$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
 
 Add-Type -AssemblyName PresentationFramework
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
