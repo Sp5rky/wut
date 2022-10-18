@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinUtility"
         mc:Ignorable="d"
-        Background="#222222"
+        Background="#777777"
 		WindowStartupLocation="CenterScreen"
-        Title="Twisted Fish - Windows Utilities Tool" Height="539" Width="800">
+        Title="Twisted Fish - Windows Utility Tool" Height="539" Width="800">
 	<Border Name="dummy" Grid.Column="0" Grid.Row="0">
 	<Viewbox Stretch="Uniform" VerticalAlignment="Top">
 		<Grid Background="#c31722" ShowGridLines="False" Name="MainGrid">
@@ -22,7 +22,6 @@
 				<Image Height="50" Width="200" Name="Icon" SnapsToDevicePixels="True" Source="https://twistedfish.com/img/logo.png" Margin="10,10,10,10"/>
 				<Button Content="Install" HorizontalAlignment="Left" Height="40" Width="100" Background="#222222" BorderThickness="0,0,0,0" FontWeight="Bold" Foreground="#ffffff" Name="Tab1BT"/>
 				<Button Content="Tweaks" HorizontalAlignment="Left" Height="40" Width="100" Background="#333333" BorderThickness="0,0,0,0" FontWeight="Bold" Foreground="#ffffff" Name="Tab2BT"/>
-
 			</DockPanel>
 			<TabControl Grid.Row="1" Padding="-1" Name="TabNav" Background="#777777">
 					<TabItem Header="Install" Visibility="Collapsed" Name="Tab1">
@@ -96,7 +95,6 @@
 						<StackPanel Background="#777777" SnapsToDevicePixels="True" Grid.Row="2" Grid.Column="0" Margin="10,5">
 							<Label FontSize="16" Content="Essential Tweaks"/>
 							<CheckBox Name="EssTweaksRP" Content="Create Restore Point" Margin="5,0" ToolTip="Creates a Windows Restore point before modifying system. Can use Windows System Restore to rollback to before tweaks were applied"/>
-							<CheckBox Name="EssTweaksOO" Content="Run OO Shutup" Margin="5,0" ToolTip="Runs OO Shutup from https://www.oo-software.com/en/shutup10"/>
 							<CheckBox Name="EssTweaksTele" Content="Disable Telemetry" Margin="5,0" ToolTip="Disables Microsoft Telemetry. Note: This will lock many Edge Browser settings. Microsoft spys heavily on you when using the Edge browser."/>
 							<CheckBox Name="EssTweaksWifi" Content="Disable Wifi-Sense" Margin="5,0" ToolTip="Wifi Sense is a spying service that phones home all nearby scaned wifi networks and your current geo location."/>
 							<CheckBox Name="EssTweaksAH" Content="Disable Activity History" Margin="5,0" ToolTip="This erases recent docs, clipboard, and run history."/>

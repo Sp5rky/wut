@@ -1,4 +1,4 @@
-﻿# Twisted Fish - Windows Utilities Tool
+﻿# Twisted Fish - Windows Utility Tool
 
 This Utility is meant to streamline *installs*, debloat with *tweaks*
 

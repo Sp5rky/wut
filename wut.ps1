@@ -68,7 +68,7 @@ Function Get-FormVariables {
     write-host "       ##=  ##=                           "
     write-host "      :##=:+#*                            "
     write-host ""
-    write-host "Twisted Fish - Windows Utilities Tool"
+    write-host "Twisted Fish - Windows Utility Tool"
     write-host "          --WUT--                    "
                            
  
@@ -83,7 +83,7 @@ Get-FormVariables
 #===========================================================================
 # Global Variables
 #===========================================================================
-$AppTitle = "Twisted Fish - Windows Utilities Tool"
+$AppTitle = "Twisted Fish - Windows Utility Tool"
 
 
 #===========================================================================
