@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WinUtility"
         mc:Ignorable="d"
-        Background="#c31722"
+        Background="#222222"
 		WindowStartupLocation="CenterScreen"
         Title="Twisted Fish - Windows Utilities Tool" Height="539" Width="800">
 	<Border Name="dummy" Grid.Column="0" Grid.Row="0">
@@ -24,9 +24,9 @@
 				<Button Content="Tweaks" HorizontalAlignment="Left" Height="40" Width="100" Background="#333333" BorderThickness="0,0,0,0" FontWeight="Bold" Foreground="#ffffff" Name="Tab2BT"/>
 
 			</DockPanel>
-			<TabControl Grid.Row="1" Padding="-1" Name="TabNav" Background="#c31722">
+			<TabControl Grid.Row="1" Padding="-1" Name="TabNav" Background="#777777">
 					<TabItem Header="Install" Visibility="Collapsed" Name="Tab1">
-					<Grid Background="#c31722">
+					<Grid Background="#222222">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="*"/>
@@ -61,8 +61,7 @@
 							<CheckBox Name="Installsevenzip" Content="7-Zip" Margin="5,0"/>
 							<CheckBox Name="Installawsvpn" Content="AWS VPN Client" Margin="5,0"/>
 							<CheckBox Name="Installwebex" Content="Cisco Webex" Margin="5,0"/>
-							<CheckBox Name="Installflux" Content="f.lux Redshift" Margin="5,0"/>
-							<CheckBox Name="Installrevo" Content="RevoUninstaller" Margin="5,0"/>
+							<CheckBox Name="Installrevo" Content="Revo Uninstaller" Margin="5,0"/>
 							<CheckBox Name="Installrufus" Content="Rufus Imager" Margin="5,0"/>
 
 							<Label Content="" FontSize="16" Margin="5,0"/>
@@ -73,7 +72,7 @@
 					</Grid>
 				</TabItem>
 				<TabItem Header="Tweaks" Visibility="Collapsed" Name="Tab2">
-					<Grid Background="#c31722">
+					<Grid Background="#222222">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="*"/>
