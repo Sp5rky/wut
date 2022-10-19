@@ -128,6 +128,10 @@ $WPFinstall.Add_Click({
             $wingetinstall.Add("3CX.Softphone")
             $WPFInstall3cx.IsChecked = $false
         }
+        If ( $WPFInstallnetextender.IsChecked -eq $true ) { 
+            $wingetinstall.Add("SonicWALL.NetExtender")
+            $WPFInstallnetextender.IsChecked = $false
+        }
         If ( $WPFInstallatom.IsChecked -eq $true ) { 
             $wingetinstall.Add("GitHub.Atom")
             $WPFInstallatom.IsChecked = $false
@@ -193,16 +197,8 @@ $WPFinstall.Add_Click({
             $WPFInstallimageglass.IsChecked = $false
         }
         If ( $WPFInstalljava8.IsChecked -eq $true ) { 
-            $wingetinstall.Add("AdoptOpenJDK.OpenJDK.8")
+            $wingetinstall.Add("Oracle.JavaRuntimeEnvironment")
             $WPFInstalljava8.IsChecked = $false
-        }
-        If ( $WPFInstalljava16.IsChecked -eq $true ) { 
-            $wingetinstall.Add("AdoptOpenJDK.OpenJDK.16")
-            $WPFInstalljava16.IsChecked = $false
-        }
-        If ( $WPFInstalljava18.IsChecked -eq $true ) { 
-            $wingetinstall.Add("Oracle.JDK.18")
-            $WPFInstalljava18.IsChecked = $false
         }
         If ( $WPFInstalljetbrains.IsChecked -eq $true ) { 
             $wingetinstall.Add("JetBrains.Toolbox")
@@ -425,6 +421,10 @@ $WPFinstall.Add_Click({
         If ( $WPFInstallteamviewer.IsChecked -eq $true ) { 
             $wingetinstall.Add("TeamViewer.TeamViewer")
             $WPFInstallteamviewer.IsChecked = $false
+        }
+        If ( $WPFInstallbluejeans.IsChecked -eq $true ) { 
+            $wingetinstall.Add("BlueJeans.BlueJeans")
+            $WPFInstallbluejeans.IsChecked = $false
         }
         If ( $WPFInstallteams.IsChecked -eq $true ) { 
             $wingetinstall.Add("Microsoft.Teams")
@@ -742,13 +742,11 @@ $WPFdesktop.Add_Click({
         $WPFEssTweaksDeleteTempFiles.IsChecked = $true
         $WPFEssTweaksDeBloat.IsChecked = $true
         $WPFEssTweaksRemoveCortana.IsChecked = $false
-        $WPFEssTweaksRemoveEdge.IsChecked = $false
         $WPFEssTweaksDiskCleanup.IsChecked = $true
         $WPFEssTweaksDVR.IsChecked = $false
         $WPFEssTweaksHiber.IsChecked =$false
         $WPFEssTweaksHome.IsChecked = $false
         $WPFEssTweaksLoc.IsChecked = $false
-        $WPFEssTweaksOO.IsChecked = $false
         $WPFEssTweaksRP.IsChecked = $false
         $WPFEssTweaksServices.IsChecked = $false
         $WPFEssTweaksStorage.IsChecked = $false
@@ -769,13 +767,11 @@ $WPFnone.Add_Click({
         $WPFEssTweaksDeleteTempFiles.IsChecked = $false
         $WPFEssTweaksDeBloat.IsChecked = $false
         $WPFEssTweaksRemoveCortana.IsChecked = $false
-        $WPFEssTweaksRemoveEdge.IsChecked = $false
         $WPFEssTweaksDiskCleanup.IsChecked = $false
         $WPFEssTweaksDVR.IsChecked = $false
         $WPFEssTweaksHiber.IsChecked = $false
         $WPFEssTweaksHome.IsChecked = $false
         $WPFEssTweaksLoc.IsChecked = $false
-        $WPFEssTweaksOO.IsChecked = $false
         $WPFEssTweaksRP.IsChecked = $false
         $WPFEssTweaksServices.IsChecked = $false
         $WPFEssTweaksStorage.IsChecked = $false
