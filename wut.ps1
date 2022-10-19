@@ -116,6 +116,10 @@ $WPFinstall.Add_Click({
             $wingetinstall.Add("Famatech.AdvancedIPScanner")
             $WPFInstalladvancedip.IsChecked = $false
         }
+        If ( $WPFInstall3cx.IsChecked -eq $true ) { 
+            $wingetinstall.Add("3CX.Softphone")
+            $WPFInstall3cx.IsChecked = $false
+        }
         If ( $WPFInstallatom.IsChecked -eq $true ) { 
             $wingetinstall.Add("GitHub.Atom")
             $WPFInstallatom.IsChecked = $false

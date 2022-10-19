@@ -15,6 +15,9 @@
     "Installanydesk": {
       "winget": "AnyDeskSoftwareGmbH.AnyDesk"
     },
+    "Install3cx": {
+      "winget": "3CX.Softphone"
+    },
     "Installatom": {
       "winget": "GitHub.Atom"
     },

@@ -43,6 +43,7 @@
 							<CheckBox Name="Installteams" Content="Teams" Margin="5,0"/>
 							<CheckBox Name="Installwebex" Content="Webex" Margin="5,0"/>
 							<CheckBox Name="Installzoom" Content="Zoom" Margin="5,0"/>
+							<CheckBox Name="Install3cx" Content="3CX Softphone" Margin="5,0"/>
 
 							<Label Content="Document" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Installadobe" Content="Adobe Reader DC" Margin="5,0"/>
