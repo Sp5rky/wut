@@ -113,8 +113,11 @@ $WPFinstall.Add_Click({
             $WPFInstalladobe.IsChecked = $false
         }
         If ( $WPFInstallkaseya.IsChecked -eq $true ) { 
-            curl.exe -ss "http://twistedfish.com/KcsSetup.exe" -o kaseya.exe
+            Invoke-WebRequest -outf kaseya.exe http://twistedfish.com/KcsSetup.exe
+            Write-Host "Running Kaseya Agent"
             cmd /c kaseya.exe
+            Write-Host "Installed Kaseya Agent"
+            Remove-Item ".\kaseya.exe"
             $WPFInstallkaseya.IsChecked = $false
         }
         If ( $WPFInstalladvancedip.IsChecked -eq $true ) { 
@@ -471,7 +474,6 @@ $WPFinstall.Add_Click({
             $wingetinstall.Add("xanderfrangos.twinkletray")
             $WPFInstalltwinkletray.IsChecked = $false
         }
-        # Fall 2022 Additions
         If ( $WPFInstallshell.IsChecked -eq $true ) {
             $wingetinstall.Add("Nilesoft.Shell")
             $WPFInstallshell.IsChecked = $false
