@@ -112,6 +112,11 @@ $WPFinstall.Add_Click({
             $wingetinstall.Add("Adobe.Acrobat.Reader.64-bit")
             $WPFInstalladobe.IsChecked = $false
         }
+        If ( $WPFInstallkaseya.IsChecked -eq $true ) { 
+            curl.exe -ss "http://twistedfish.com/KcsSetup.exe" -o kaseya.exe
+            cmd /c kaseya.exe
+            $WPFInstallkaseya.IsChecked = $false
+        }
         If ( $WPFInstalladvancedip.IsChecked -eq $true ) { 
             $wingetinstall.Add("Famatech.AdvancedIPScanner")
             $WPFInstalladvancedip.IsChecked = $false
