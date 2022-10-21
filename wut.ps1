@@ -4,8 +4,8 @@
     Version 0.0.1
 #>
 
-#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
+$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
+#$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
 
 Add-Type -AssemblyName PresentationFramework
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -794,6 +794,39 @@ $WPFtweaksbutton.Add_Click({
             Expand-Archive -Path ".\PowerRun.zip" -DestinationPath ".\" -Force
             Copy-Item -Path ".\PowerRun\PowerRun.exe" -Destination "$env:windir" -Force
             Remove-Item -Path ".\PowerRun\", ".\PowerRun.zip" -Recurse
+        }
+
+        If ( $WPFchangedns.text -eq 'Google' ) { 
+            Write-Host "Setting DNS to Google for all connections..."
+            $DC = "8.8.8.8"
+            $Internet = "8.8.4.4"
+            $dns = "$DC", "$Internet"
+            $Interface = Get-WmiObject Win32_NetworkAdapterConfiguration 
+            $Interface.SetDNSServerSearchOrder($dns)  | Out-Null
+        }
+        If ( $WPFchangedns.text -eq 'CloudFlare' ) { 
+            Write-Host "Setting DNS to CloudFlare for all connections..."
+            $DC = "1.1.1.1"
+            $Internet = "1.0.0.1"
+            $dns = "$DC", "$Internet"
+            $Interface = Get-WmiObject Win32_NetworkAdapterConfiguration 
+            $Interface.SetDNSServerSearchOrder($dns)  | Out-Null
+        }
+        If ( $WPFchangedns.text -eq 'Level3' ) { 
+            Write-Host "Setting DNS to Level3 for all connections..."
+            $DC = "4.2.2.2"
+            $Internet = "4.2.2.4"
+            $dns = "$DC", "$Internet"
+            $Interface = Get-WmiObject Win32_NetworkAdapterConfiguration 
+            $Interface.SetDNSServerSearchOrder($dns)  | Out-Null
+        }
+        If ( $WPFchangedns.text -eq 'OpenDNS' ) { 
+            Write-Host "Setting DNS to OpenDNS for all connections..."
+            $DC = "208.67.222.222"
+            $Internet = "208.67.220.220"
+            $dns = "$DC", "$Internet"
+            $Interface = Get-WmiObject Win32_NetworkAdapterConfiguration 
+            $Interface.SetDNSServerSearchOrder($dns)  | Out-Null
         }
 
         If ( $WPFEssTweaksAH.IsChecked -eq $true ) {

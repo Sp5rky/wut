@@ -112,6 +112,13 @@
 							<CheckBox Name="EssTweaksHiber" Content="Disable Hibernation" Margin="5,0" ToolTip="Hibernation is really meant for laptops as it saves whats in memory before turning the pc off. It really should never be used, but some people are lazy and rely on it. Don't be like Bob. Bob likes hibernation."/>
 							<CheckBox Name="EssTweaksDVR" Content="Disable GameDVR" Margin="5,0" ToolTip="GameDVR is a Windows App that is a dependancy for some Store Games. I've never met someone that likes it, but it's there for the XBOX crowd."/>
 							<CheckBox Name="EssTweaksServices" Content="Set Services to Manual" Margin="5,0" ToolTip="Turns a bunch of system services to manual that don't need to be running all the time. This is pretty harmless as if the service is needed, it will simply start on demand."/>
+							<ComboBox Name="changedns"  Height = "20" HorizontalAlignment = "Left" Margin="5,5" ToolTip="Change DNS settings for all network connections" > 
+								<ComboBoxItem IsSelected="True" Content = "Default DNS"/> 
+								<ComboBoxItem ToolTip="8.8.8.8/8.8.4.4" Content = "Google"/> 
+								<ComboBoxItem ToolTip="1.1.1.1/1.0.0.1" Content = "CloudFlare"/> 
+								<ComboBoxItem ToolTip="4.2.2.2/4.2.2.4" Content = "Level3"/> 
+								<ComboBoxItem ToolTip="208.67.222.222/208.67.220.220" Content = "OpenDNS"/> 
+							</ComboBox> 
 							<Label Content="Dark Theme" />
 							<Button Name="EnableDarkMode" Background="AliceBlue" Content="Enable" Margin="60,0" />
 							<Button Name="DisableDarkMode" Background="AliceBlue" Content="Disable" Margin="60,0"/>
