@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Background="#777777"
 		WindowStartupLocation="CenterScreen"
-        Title="Twisted Fish - Windows Utility Tool" Height="524" Width="800">
+        Title="Twisted Fish - Windows Utility Tool" Height="545" Width="800">
 	<Border Name="dummy" Grid.Column="0" Grid.Row="0">
 	<Viewbox Stretch="Uniform" VerticalAlignment="Top">
 		<Grid Background="#c31722" ShowGridLines="False" Name="MainGrid">
@@ -146,7 +146,7 @@
 					</Grid>
 				</TabItem>
 				<TabItem Header="Config" Visibility="Collapsed" Name="Tab3">
-					<Grid Background="#444444">
+					<Grid Background="#222222">
 						<Grid.ColumnDefinitions>
 							<ColumnDefinition Width="*"/>
 							<ColumnDefinition Width="*"/>
