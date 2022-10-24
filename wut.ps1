@@ -1,11 +1,11 @@
 <#
 .NOTES
    Author      : George Slight
-    Version 0.0.1
+    Version 0.0.2
 #>
 
-$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-#$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
+#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
+$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
 
 Add-Type -AssemblyName PresentationFramework
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -93,11 +93,19 @@ $AppTitle = "Twisted Fish - Windows Utility Tool"
 $WPFTab1BT.Add_Click({
         $WPFTabNav.Items[0].IsSelected = $true
         $WPFTabNav.Items[1].IsSelected = $false
+        $WPFTabNav.Items[2].IsSelected = $false
     })
 $WPFTab2BT.Add_Click({
         $WPFTabNav.Items[0].IsSelected = $false
         $WPFTabNav.Items[1].IsSelected = $true
+        $WPFTabNav.Items[2].IsSelected = $false
     })
+ $WPFTab3BT.Add_Click({
+        $WPFTabNav.Items[0].IsSelected = $false
+        $WPFTabNav.Items[1].IsSelected = $false
+        $WPFTabNav.Items[2].IsSelected = $true
+    })
+
 
 #===========================================================================
 # Tab 1 - Install
@@ -1607,6 +1615,89 @@ $WPFundoall.Add_Click({
         Write-Host "---   Undo All is Finished    ---"
         Write-Host "================================="
     })
+
+#===========================================================================
+# Tab 3 - Config Buttons
+#===========================================================================
+$WPFFeatureInstall.Add_Click({
+
+    If ( $WPFFeaturesdotnet.IsChecked -eq $true ) {
+        Enable-WindowsOptionalFeature -Online -FeatureName "NetFx4-AdvSrvs" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "NetFx3" -All -NoRestart
+    }
+    If ( $WPFFeatureshyperv.IsChecked -eq $true ) {
+        Enable-WindowsOptionalFeature -Online -FeatureName "HypervisorPlatform" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-All" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Tools-All" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-PowerShell" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Hypervisor" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Services" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Hyper-V-Management-Clients" -All -NoRestart
+        cmd /c bcdedit /set hypervisorschedulertype classic
+        Write-Host "HyperV is now installed and configured. Please Reboot before using."
+    } 
+    If ( $WPFFeatureslegacymedia.IsChecked -eq $true ) {
+        Enable-WindowsOptionalFeature -Online -FeatureName "WindowsMediaPlayer" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "MediaPlayback" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "DirectPlay" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "LegacyComponents" -All -NoRestart
+    }
+    If ( $WPFFeaturewsl.IsChecked -eq $true ) {
+        Enable-WindowsOptionalFeature -Online -FeatureName "VirtualMachinePlatform" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "Microsoft-Windows-Subsystem-Linux" -All -NoRestart
+        Write-Host "WSL is now installed and configured. Please Reboot before using."
+    }
+    If ( $WPFFeaturenfs.IsChecked -eq $true ) {
+        Enable-WindowsOptionalFeature -Online -FeatureName "ServicesForNFS-ClientOnly" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "ClientForNFS-Infrastructure" -All -NoRestart
+        Enable-WindowsOptionalFeature -Online -FeatureName "NFS-Administration" -All -NoRestart
+        nfsadmin client stop
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default" -Name "AnonymousUID" -Type DWord -Value 0
+        Set-ItemProperty -Path "HKLM:\SOFTWARE\Microsoft\ClientForNFS\CurrentVersion\Default" -Name "AnonymousGID" -Type DWord -Value 0
+        nfsadmin client start
+        nfsadmin client localhost config fileaccess=755 SecFlavors=+sys -krb5 -krb5i
+        Write-Host "NFS is now setup for user based NFS mounts"
+    }
+    $ButtonType = [System.Windows.MessageBoxButton]::OK
+    $MessageboxTitle = "All features are now installed "
+    $Messageboxbody = ("Done")
+    $MessageIcon = [System.Windows.MessageBoxImage]::Information
+
+    [System.Windows.MessageBox]::Show($Messageboxbody, $MessageboxTitle, $ButtonType, $MessageIcon)
+
+    Write-Host "================================="
+    Write-Host "---  Features are Installed   ---"
+    Write-Host "================================="
+})
+
+$WPFPanelDISM.Add_Click({
+    Start-Process PowerShell -ArgumentList "Write-Host '(1/4) Chkdsk' -ForegroundColor Green; Chkdsk /scan; 
+    Write-Host '`n(2/4) SFC - 1st scan' -ForegroundColor Green; sfc /scannow;
+    Write-Host '`n(3/4) DISM' -ForegroundColor Green; DISM /Online /Cleanup-Image /Restorehealth; 
+    Write-Host '`n(4/4) SFC - 2nd scan' -ForegroundColor Green; sfc /scannow; 
+    Read-Host '`nPress Enter to Continue'" -verb runas
+})#
+$WPFPanelcontrol.Add_Click({
+    cmd /c control
+})
+$WPFPanelnetwork.Add_Click({
+    cmd /c ncpa.cpl
+})
+$WPFPanelpower.Add_Click({
+    cmd /c powercfg.cpl
+})
+$WPFPanelsound.Add_Click({
+    cmd /c mmsys.cpl
+})
+$WPFPanelsystem.Add_Click({
+    cmd /c sysdm.cpl
+})
+$WPFPaneluser.Add_Click({
+    cmd /c "control userpasswords2"
+})
+
+
 #===========================================================================
 # Shows the form
 #===========================================================================
