@@ -129,11 +129,11 @@ $WPFinstall.Add_Click({
             $WPFInstallkaseya.IsChecked = $false
         }
         If ( $WPFInstallo365.IsChecked -eq $true ) { 
-            Invoke-WebRequest -outf setup.exe https://github.com/Sp5rky/wut/raw/main/OfficeSetup.exe
+            Invoke-WebRequest -outf officesetup.exe https://github.com/Sp5rky/wut/raw/main/OfficeSetup.exe
             Write-Host "Running Office 365 Setup"
-            cmd setup.exe
+            ".\officesetup.exe"
             Write-Host "Installed Office 365"
-            Remove-Item ".\setup.exe"
+            Remove-Item ".\officesetup.exe"
             $WPFInstallo365.IsChecked = $false
         }
         If ( $WPFInstalladvancedip.IsChecked -eq $true ) { 
