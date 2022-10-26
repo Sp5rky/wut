@@ -42,6 +42,7 @@
 							<Label Content="Communications" FontSize="16" Margin="5,0"/>
 							<CheckBox Name="Install3cx" Content="3CX Softphone" Margin="5,0"/>
 							<CheckBox Name="Installbluejeans" Content="BlueJeans" Margin="5,0"/>
+							<CheckBox Name="Installo365" Content="Office 365" Margin="5,0"/>
 							<CheckBox Name="Installslack" Content="Slack" Margin="5,0"/>
 							<CheckBox Name="Installteams" Content="Teams" Margin="5,0"/>
 							<CheckBox Name="Installwebex" Content="Webex" Margin="5,0"/>

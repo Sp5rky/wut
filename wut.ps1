@@ -5,7 +5,7 @@
 #>
 
 #$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-$inputXML = (new-object Net.WebClient).DownloadString("https://raw.githubusercontent.com/Sp5rky/wut/main/MainWindow.xaml")
+$inputXML = (new-object Net.WebClient).DownloadString("https://bit.ly/TFwutconfig")
 
 Add-Type -AssemblyName PresentationFramework
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal([Security.Principal.WindowsIdentity]::GetCurrent())
@@ -127,6 +127,14 @@ $WPFinstall.Add_Click({
             Write-Host "Installed Kaseya Agent"
             Remove-Item ".\kaseya.exe"
             $WPFInstallkaseya.IsChecked = $false
+        }
+        If ( $WPFInstallo365.IsChecked -eq $true ) { 
+            Invoke-WebRequest -outf setup.exe https://github.com/Sp5rky/wut/raw/main/OfficeSetup.exe
+            Write-Host "Running Office 365 Setup"
+            cmd /c setup.exe
+            Write-Host "Installed Office 365"
+            Remove-Item ".\setup.exe"
+            $WPFInstallo365.IsChecked = $false
         }
         If ( $WPFInstalladvancedip.IsChecked -eq $true ) { 
             $wingetinstall.Add("Famatech.AdvancedIPScanner")
@@ -1410,6 +1418,22 @@ $WPFtweaksbutton.Add_Click({
                 Get-AppxPackage "*$Bloat*" | Remove-AppxPackage
                 Get-AppxProvisionedPackage -Online | Where-Object DisplayName -like "*$Bloat*" | Remove-AppxProvisionedPackage -Online
                 Write-Host "Trying to remove $Bloat."
+            }
+
+            $AdobeOffers = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Adobe Offers.lnk"
+                if (Test-Path $AdobeOffers) {
+                Remove-Item $AdobeOffers
+                write-host "$AdobeOffers has been deleted"
+            } else {
+                Write-host "$AdobeOffers doesn't exist"
+            }
+
+            $AdobeOffersFolder = "C:\Program Files (x86)\Online Services\Adobe"
+                if (Test-Path $AdobeOffersFolder) {
+                Remove-Item $AdobeOffersFolder -Force -Recurse
+                Write-Host "$AdobeOffersFolder has been deleted"
+            } else {
+                Write-Host "$AdobeOffersFolder doesn't exist"
             }
 
             Write-Host "Finished Removing Bloatware Apps"
