@@ -1435,6 +1435,22 @@ $WPFtweaksbutton.Add_Click({
                 Write-Host "$AdobeOffersFolder doesn't exist"
             }
 
+            $Amazon = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Amazon.com.lnk"
+            if (Test-Path $Amazon) {
+            Remove-Item $Amazon
+            write-host "$Amazon has been deleted"
+            } else {
+            Write-host "$Amazon doesn't exist"
+            }
+
+            $HPDocumentation = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\HP Documentation.lnk"
+            if (Test-Path $HPDocumentation) {
+            Remove-Item $HPDocumentation
+            write-host "$HPDocumentation has been deleted"
+            } else {
+            Write-host "$HPDocumentation doesn't exist"
+            }
+
             Write-Host "Finished Removing Bloatware Apps"
             Write-Host "Removing Bloatware Programs"
             # Remove installed programs
