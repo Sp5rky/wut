@@ -1,7 +1,4 @@
-﻿#Author : George Slight
-#Version 0.1.0
-
-#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
+﻿#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
 $inputXML = (New-Object Net.WebClient).DownloadString("https://bit.ly/TFwutconfig")
 
 Add-Type -AssemblyName PresentationFramework
