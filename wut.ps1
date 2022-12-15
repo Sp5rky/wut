@@ -1344,6 +1344,21 @@ $WPFtweaksbutton.Add_Click({
 				"Duolingo-LearnLanguagesforFree"
 				"PandoraMediaInc"
 				"CandyCrush"
+				"Clipchamp - Video Editor"
+				"Disney+"
+				"Dropbox"
+				"Evernote"
+				"Hearts Deluxe"
+				"Instagram"
+				"Messenger"
+				"Prime Video"
+				"Simple Mahjong"
+				"Simple Solitaire"
+				"Simple Spider Solitaire"
+				"Spades"
+				"Spotify"
+				"Tiktok"
+				"Xbox"
 				"BubbleWitch3Saga"
 				"Wunderlist"
 				"Flipboard"
@@ -1429,12 +1444,12 @@ $WPFtweaksbutton.Add_Click({
 				Write-Host "$AdobeOffersFolder doesn't exist"
 			}
 
-			$Amazon = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Amazon.com.lnk"
-			if (Test-Path $Amazon) {
-				Remove-Item $Amazon
-				Write-Host "$Amazon has been deleted"
+			$AmazonStart1 = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Amazon.com.lnk"
+			if (Test-Path $AmazonStart1) {
+				Remove-Item $AmazonStart1
+				Write-Host "$AmazonStart1 has been deleted"
 			} else {
-				Write-Host "$Amazon doesn't exist"
+				Write-Host "$AmazonStart1 doesn't exist"
 			}
 
 			$HPDocumentation = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\HP Documentation.lnk"
@@ -1443,6 +1458,38 @@ $WPFtweaksbutton.Add_Click({
 				Write-Host "$HPDocumentation has been deleted"
 			} else {
 				Write-Host "$HPDocumentation doesn't exist"
+			}
+
+			$AgodaStart = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Agoda.lnk"
+			if (Test-Path $AgodaStart) {
+				Remove-Item $AgodaStart
+				Write-Host "$AgodaStart has been deleted"
+			} else {
+				Write-Host "$AgodaStart doesn't exist"
+			}
+
+			$FOEStart = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Forge of Empires.lnk"
+			if (Test-Path $FOEStart) {
+				Remove-Item $FOEStart
+				Write-Host "$FOEStart has been deleted"
+			} else {
+				Write-Host "$FOEStart doesn't exist"
+			}
+
+			$AppExplorerStart = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\App Explorer.lnk"
+			if (Test-Path $AppExplorer) {
+				Remove-Item $AppExplorer
+				Write-Host "$AppExplorer has been deleted"
+			} else {
+				Write-Host "$AppExplorer doesn't exist"
+			}
+
+			$Planet9 = "C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Planet9 Link.lnk"
+			if (Test-Path $Planet9) {
+				Remove-Item $Planet9
+				Write-Host "$Planet9 has been deleted"
+			} else {
+				Write-Host "$Planet9 doesn't exist"
 			}
 
 			Write-Host "Finished Removing Bloatware Apps"
