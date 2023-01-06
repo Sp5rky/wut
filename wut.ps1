@@ -1,5 +1,4 @@
-﻿#$inputXML = Get-Content "MainWindow.xaml" #uncomment for development
-$inputXML = (New-Object Net.WebClient).DownloadString("https://bit.ly/TFwutconfig")
+﻿$inputXML = (New-Object Net.WebClient).DownloadString("https://bit.ly/TFwutconfig")
 
 Add-Type -AssemblyName PresentationFramework
 $currentPrincipal = New-Object Security.Principal.WindowsPrincipal ([Security.Principal.WindowsIdentity]::GetCurrent())
